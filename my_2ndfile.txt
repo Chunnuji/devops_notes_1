@@ -1,4 +1,0 @@
-this vi mode in git bash
-command is to write -->
-vi <file_name>
-My self chunnu ji
