@@ -17,6 +17,8 @@ In any new project :
 
 8. git log --> to check log of last 10 commits
 
+8a. git log --oneline
+
 9. git log --author ="Chunnu Ji Tiwari" --> to check particular person commit can also use email
 
 10. gh repo create--> to create new github repo from cmd/ add existing one on gihub repo
@@ -37,7 +39,11 @@ In any new project :
 
 14. git push origin <branch_name> --> to push local branch on git
 
-15. git reset --> stage to unstage
+15. git reset --soft <commit-id> --> go to staging without changes delete
+
+15a. git reset --hard <commit-id> --> delete changes too
+
+15b. git revert HEAD --> go to previous commit with new commit msg
 
 16. git rm --cached <file_name> --> commit to unstage
 
