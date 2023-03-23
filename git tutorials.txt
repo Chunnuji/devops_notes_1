@@ -1,4 +1,4 @@
-git and git hub commands
+Git and Github commands :
 
 1. git config --list --> to know the user credentials
 
