@@ -11,6 +11,8 @@ In any new project :
 
 5 git diff --> to check difference
 
+5a. git diff <commit-id 1> and <commit-id 2>
+
 6. touch my_2ndfile.txt --> create new file from git bash
 
 7. go to view mode --> vi <file_name> --> click 'esc'--> :wq (to save the changes)--> enter or :q!(to keep as it is)--> enter
@@ -43,6 +45,8 @@ In any new project :
 
 15a. git reset --hard <commit-id> --> delete changes too
 
+* after doing steo 15a if remote branch is ahead and git push showing error --> git push --force --> it will sync local repo and remote repo.
+
 15b. git revert HEAD --> go to previous commit with new commit msg
 
 16. git rm --cached <file_name> --> commit to unstage
@@ -51,6 +55,11 @@ In any new project :
 
 18. git conflict --> occurs when changes done in same file by 2 members or two different location--> resolve in vscode
 
+19. git branch -d <branch_name> --> delete the branch
+
+20. git branch -m <branch_old_name> <branch_new_name>
+
+21. git log --oneline --graph --> graphical representation
 
 
 
