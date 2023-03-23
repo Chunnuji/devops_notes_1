@@ -1,3 +1,4 @@
+GIT and GIT commands:
 
 1. git config --list --> to know the user credentials
 
@@ -21,18 +22,27 @@ In any new project :
 10. gh repo create--> to create new github repo from cmd/ add existing one on gihub repo
 
 11. Work in team on github:
+
 	a) create a repo--> creator will be owner
+	
 	b) go to setting of that repo --> collaborators--> add (give email of other members)
+	
 	c) go to setting -->branches --> add rule for pr(otherwise anyone will add or delete anything)
+	
 	d) create a branch --> make changes --> raise pr request--> owner will approve/comment/disapprove, will also be able to delete it
  
 12. git branch <branch_name>--> to create branch
 
 13. git switch <branch_name> --> change to other branch
+
 14. git push origin <branch_name> --> to push local branch on git
+
 15. git reset --> stage to unstage
+
 16. git rm --cached <file_name> --> commit to unstage
+
 17. git reset HEAD^ --->commit to unstage --> will delete last commit
+
 18. git conflict --> occurs when changes done in same file by 2 members or two different location--> resolve in vscode
 
 
