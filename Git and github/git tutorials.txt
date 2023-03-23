@@ -61,7 +61,25 @@ In any new project :
 
 21. git log --oneline --graph --> graphical representation
 
+22. git stash 
 
+23. git stash list --> list of all stash
+
+24. git stash apply --> bring back unstage area
+
+25. git stash drop --> delete from stash area
+
+* above command work only for tarcked file
+
+26. git stash -a --> stash both tarcked and untarcked files
+
+27. git pop --> bring unstaged area also delete from stash list
+
+28. git stash save "some msg"
+
+29. git stash show stash@{index}
+
+30. git stash apply stash@{index} 
 
 
 
