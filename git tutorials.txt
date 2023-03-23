@@ -29,6 +29,7 @@ can also use email
 	c) go to setting -->branches --> add rule for pr(otherwise anyone will add or delete anything)
 	d) create a branch --> make changes --> raise pr request--> owner will approve/comment/disapprove, will also be able to delete it
  
+12. git branch <branch_name>--> to create branch
 
 
 
