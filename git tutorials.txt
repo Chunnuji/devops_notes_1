@@ -28,11 +28,14 @@ In any new project :
 	d) create a branch --> make changes --> raise pr request--> owner will approve/comment/disapprove, will also be able to delete it
  
 12. git branch <branch_name>--> to create branch
+
 13. git switch <branch_name> --> change to other branch
 14. git push origin <branch_name> --> to push local branch on git
 15. git reset --> stage to unstage
 16. git rm --cached <file_name> --> commit to unstage
 17. git reset HEAD^ --->commit to unstage 
+18. git conflict --> occurs when changes done in same file by 2 members or two different location--> resolve in vscode
+
 
 
 
