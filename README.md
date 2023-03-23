@@ -1,3 +1,8 @@
 # devops_notes_1
 
-this is to test pr from collaborator.
+repo for notes:
+git 
+jenkins
+ansible
+terraform
+docker
