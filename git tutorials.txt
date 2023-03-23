@@ -11,5 +11,26 @@ in any new project
 
 5 git diff --> to check difference
 
+6. touch my_2ndfile.txt --> create new file from git bash
+
+7. go to view mode --> vi <file_name> 
+--> click 'esc'--> :wq (to save the changes)--> enter or :q!(to keep as it is)--> enter
+
+8. git log --> to check log of last 10 commits
+
+9. git log --author ="Chunnu Ji Tiwari" --> to check particular person commit
+can also use email
+
+10. gh repo create--> to create new github repo from cmd/ add existing one on gihub repo
+
+11. Work in team on github:
+	a) create a repo--> creator will be owner
+	b) go to setting of that repo --> collaborators--> add (give email of other members)
+	c) go to setting -->branches --> add rule for pr(otherwise anyone will add or delete anything)
+	d) create a branch --> make changes --> raise pr request--> owner will approve/comment/disapprove, will also be able to delete it
+ 
+
+
+
 
 
