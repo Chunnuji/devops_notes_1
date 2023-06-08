@@ -1,0 +1,11 @@
+1. docker version
+
+2. docker info
+
+to know all the running process :-
+
+ps aux
+
+to know for docker:-
+
+ps aux | grep <container_name>
