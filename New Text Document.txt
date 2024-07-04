@@ -1,0 +1,43 @@
+import PyPDF2
+
+# Function to extract text from PDF
+def extract_text_from_pdf(pdf_path):
+    text = ""
+    with open(pdf_path, "rb") as f:
+        reader = PyPDF2.PdfFileReader(f)
+        num_pages = reader.numPages
+        for page_num in range(num_pages):
+            page = reader.getPage(page_num)
+            text += page.extract_text()
+    return text
+
+# Example usage:
+input_pdf = "input.pdf"
+extracted_text = extract_text_from_pdf(input_pdf)
+
+# Print extracted text (for verification)
+print(extracted_text)
+
+# Function to update PDF with new text
+def update_pdf_with_text(input_pdf, output_pdf, updated_text):
+    with open(input_pdf, "rb") as f:
+        reader = PyPDF2.PdfFileReader(f)
+        writer = PyPDF2.PdfFileWriter()
+
+        # Copy all pages from input to output
+        for page_num in range(reader.numPages):
+            page = reader.getPage(page_num)
+            writer.addPage(page)
+
+        # Add updated text to a new page
+        new_page = PyPDF2.pdf.PageObject.createBlankPage()
+        new_page.mergePage(PyPDF2.pdf.PageObject.createTextObject(updated_text))
+        writer.addPage(new_page)
+
+        # Write the updated content to output PDF file
+        with open(output_pdf, "wb") as out_f:
+            writer.write(out_f)
+
+# Example usage:
+output_pdf = "output.pdf"
+update_pdf_with_text(input_pdf, output_pdf, extracted_text)
