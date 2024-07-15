@@ -68,3 +68,65 @@ search_text = 'OldText'
 replace_text = 'NewText'
 
 replace_text_in_docx(doc_file, search_text, replace_text)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+from docx import Document
+from docx.shared import Pt
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+
+# Open an existing document
+doc = Document('Edit.docx')
+
+# Access the first paragraph and modify its text and formatting
+first_paragraph = doc.paragraphs[3]
+first_paragraph.text = 'Updated Text'
+run = first_paragraph.runs[0]
+run.bold = True
+run.italic = True
+run.font.size = Pt(16)
+first_paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+# Add a new heading
+# doc.add_heading('New Section', level=1)
+
+# Add a new paragraph with a hyperlink
+new_paragraph = doc.add_paragraph('Visit our website: ')
+# run = new_paragraph.add_run('www.example.com')
+# run.hyperlink.address = 'https://www.example.com'
+
+# # Add a new table
+# doc.add_heading('Table Section', level=2)
+# table = doc.add_table(rows=4, cols=4)
+# table.style = 'Table Grid'
+# table.autofit = False
+# table.allow_autofit = False
+# for row in table.rows:
+#     for cell in row.cells:
+#         cell.width = Pt(100)
+# table.cell(0, 0).text = 'Name'
+# table.cell(0, 1).text = 'Age'
+# table.cell(0, 2).text = 'City'
+# for i, data in enumerate([('David', '28', 'London'), ('Emma', '35', 'New York'), ('John', '22', 'Los Angeles')], start=1):
+#     table.cell(i, 0).text = data[0]
+#     table.cell(i, 1).text = data[1]
+#     table.cell(i, 2).text = data[2]
+
+# Save the modified document
+doc.save('modified_document1.docx')
