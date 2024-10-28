@@ -175,4 +175,55 @@ public class RedisCacheConfig {
                 .build();
     }
 }
-s
+///////////////////////
+
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.ehcache.EhCacheCacheManager;
+import org.springframework.cache.ehcache.EhCacheManagerFactoryBean;
+import org.springframework.core.io.ClassPathResource;
+
+@Configuration
+@EnableCaching
+public class EhCacheConfig {
+
+    @Bean
+    public CacheManager cacheManager() {
+        return new EhCacheCacheManager(ehCacheCacheManager().getObject());
+    }
+
+    @Bean
+    public EhCacheManagerFactoryBean ehCacheCacheManager() {
+        EhCacheManagerFactoryBean factoryBean = new EhCacheManagerFactoryBean();
+        factoryBean.setConfigLocation(new ClassPathResource("ehcache.xml"));
+        factoryBean.setShared(true);
+        return factoryBean;
+    }
+}
+///////////////////////////////////////
+
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.ehcache.org/v3"
+        xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core.xsd">
+
+    <!-- Default cache configuration -->
+    <cache alias="defaultCache">
+        <expiry>
+            <ttl unit="minutes">60</ttl>
+        </expiry>
+        <heap unit="entries">100</heap>
+    </cache>
+
+    <!-- Cache for products with custom configuration -->
+    <cache alias="products">
+        <expiry>
+            <ttl unit="minutes">30</ttl> <!-- Set TTL to 30 minutes -->
+        </expiry>
+        <heap unit="entries">200</heap> <!-- Limit to 200 entries -->
+    </cache>
+
+</config>
+
