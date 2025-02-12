@@ -1,11 +1,17 @@
 1. docker version
 
-2. docker info
+2. docker info                          ->to know all the running process
 
-to know all the running process :-
+3. docker container run --publish 8080:80 --name container1 --detach image_name
 
-ps aux
+4. docker container ls                  -> for running containers
 
-to know for docker:-
+5. docker container ls -a               -> for all containers
 
-ps aux | grep <container_name>
+6. docker container logs conatiner_name/id  -> for logs
+
+7. docker start container_id -> for restarting stopped container
+
+8. docker container top container_name/id  --> for knowing running process
+
+9. docker container rm container_name/id --> remove stopped container
