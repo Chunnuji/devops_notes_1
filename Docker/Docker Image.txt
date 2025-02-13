@@ -1,0 +1,9 @@
+docker images       ->list of images
+docker history image_name     -> hist of images
+docker tag image_name:present_tag image_name_new:tag_new
+docker push image_name:tag      ->image_name should start with dockerhub_username/somename:lag
+docker build -f <docker_file_path>
+docker build -t chunnuji1new/nginx_cj_docker_file:0.0.2 .
+docker inspect chunnuji1new/nginx_cj_docker_file:0.0.2
+docker build -t chunnuji1new/nginx_cj_custom_page:0.0.1 ./nginx_addon_cj
+docker build -t chunnuji1new/nginx_cj_custom_page:0.0.1 ./nginx_addon_cj

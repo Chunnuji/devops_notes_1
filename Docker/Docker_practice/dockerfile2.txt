@@ -1,0 +1,15 @@
+# Base image
+FROM openjdk:17-jdk-slim
+
+# Set environment variable
+ENV APP_HOME=/app
+WORKDIR $APP_HOME
+
+# Copy application file
+COPY target/app.jar app.jar
+
+# Expose the application port
+EXPOSE 8080
+
+# Run the application
+CMD ["java", "-jar", "app.jar"]
