@@ -1,0 +1,27 @@
+1. docker version
+2. docker info      ->to know all the running process
+3. docker container run --publish 8080:80 --name container1 --detach image_name
+4. docker container ls      -> for running containers
+5. docker container ls -a       -> for all containers
+6. docker container logs conatiner_name/id      -> for logs
+7. docker start container_id        -> for restarting stopped container
+8. docker container top container_name/id       -> for knowing running process
+9. docker container rm container_name/id        -> remove stopped container
+10.docker images       -> list of images on local
+11.docker pull image_name       -> for image pull from docker central repo
+12.docker container run --name conatiner_name --detach -e MYSQL_PASSWORD=pass image_name
+13.docker stats conatiner_name      ->stats
+24.docker inspect conatiner_name        ->detailed stats
+25.docker container run -d -p 8080:80 --name conatiner_name -it image_name      ->interactive mode
+26.docker container run -p 8080:80 --name -it image_name /bin/bash
+27.docker exec -it container_name touch /tmp/cj
+28.docker exce -it conatiner_name /bin/bash
+29.docker exec -it MYSQL_container mysql -uroot -p
+30.docker network create network_name
+31.docker container port container_name
+32.docker container conatiner_name -f {{.networkSettings.IPAddress}}
+33.docker network ls
+34.docker network ls -f name=some_name
+35.docker exec -it conatiner_name1 ping conatiner_name2
+36.docker container run --publish 8080:80 --network network_name --name container1 --detach image_name
+
