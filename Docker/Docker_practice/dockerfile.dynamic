@@ -1,0 +1,17 @@
+# Declare arguments before FROM
+ARG baseImage
+ARG version
+FROM ${baseImage}:${version}
+
+LABEL version="0.0.2"
+LABEL maintainer="tchunnuji7@gmail.com"
+
+RUN apt-get update && apt-get upgrade -y
+
+# Declare build argument
+ARG command
+RUN sh -c "$command"
+
+EXPOSE 8081
+
+CMD ["nginx", "-g", "daemon off;"]

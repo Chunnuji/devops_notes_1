@@ -1,0 +1,16 @@
+docker compose version
+docker compose build
+docker compose up
+docker compose down
+docker compose push
+docker compose up -d
+docker compose -f custom_name.yml up -d
+docker compose logs
+docker compose logs service_name(from yml)
+docker compose logs --tail 10
+docker compose logs service_name --tail 10
+docker compose logs --follow(for live logs)
+docker compose exec service_name /bin/bash
+
+--to know os on cantainer
+cat /etc/os-release

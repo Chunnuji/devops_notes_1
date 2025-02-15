@@ -6,4 +6,17 @@ docker build -f <docker_file_path>
 docker build -t chunnuji1new/nginx_cj_docker_file:0.0.2 .
 docker inspect chunnuji1new/nginx_cj_docker_file:0.0.2
 docker build -t chunnuji1new/nginx_cj_custom_page:0.0.1 ./nginx_addon_cj
-docker build -t chunnuji1new/nginx_cj_custom_page:0.0.1 ./nginx_addon_cj
+docker rmi image_id -f
+docker build -f ./Docker_practice/dockerfile2 .
+docker build -f ./Docker_practice/dockerfile2 -t nginx_dockerfile2:0.0.11 .
+docker build -f ./Docker_practice/dockerfile.dev -t nginx_dockerfile_dev:0.1.1 .
+
+-f --> docker file docker_file_path
+if docker file name different from dockerfile , mention it's name as above
+
+
+docker build -t nginx_cj:1.0.0 -f ./Docker_practice/dockerfile.dynamic \
+  --build-arg baseImage=ubuntu \
+  --build-arg version=latest \
+  --build-arg command="apt-get update && apt-get install nginx -y" .
+

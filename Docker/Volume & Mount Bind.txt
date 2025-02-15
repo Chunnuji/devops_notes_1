@@ -1,0 +1,47 @@
+docker volume ls
+docker volume create some_name
+docker container run -d -p 8080:80 --name some_name --volume volume_name image_name
+
+on windows--(assignment- create volume in 1 container access in 2nd)
+
+1.docker container run -d --name mysql_cj3 --mount source=mysql_vol,target=/var/lib/mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql 
+        -->source in host machine target in docker machine
+
+2.docker exec -it mysql_cj3 /bin/bash
+3.mysql -u root
+4.mysql -u root -p
+
+CREATE DATABASE mydb;
+
+USE mydb;
+CREATE TABLE users_by_cj (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE
+);
+
+INSERT INTO users_by_cj (name, email) VALUES ('Cj', 'cj@example.com');
+INSERT INTO users_by_cj (name, email) VALUES ('Tiwari', 'tj@example.com');
+
+5.docker container run -d --name mysql_cj4 --mount source=mysql_vol,target=/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql
+-->check tables and data
+
+on linux server --(can follow below)
+
+apt-get install mysql-client
+mysql -u root -p password -h IPAddress -p port
+
+
+--mount bind(assignment)
+docker container run -d -p 8084:80 --name nginx_cj3 --mount type=bind,source=D:\devops_notes_1\Docker\Docker_practice\MountBinding,target=/usr/share/nginx/html nginx
+docker container run -d -p 8085:80 --name nginx_cj5 --mount type=bind,source=$(pwd)\Docker_practice\MountBinding,target=/usr/share/nginx/html nginx
+
+
+--how to find volumes on windows
+docker inspect volume_name
+--in cmd 
+wsl
+--<DESKTOP---->:/tmp/docker-desktop-root/run/desktop/mnt/host/d/devops_notes_1/Docker#
+--find the path for mnt
+--go to the path, shown in inspect
+
