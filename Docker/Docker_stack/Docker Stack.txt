@@ -1,0 +1,6 @@
+--using anshul git- 
+-clone repo,create image, deploying using stack commands
+--docker_webapp_stack
+
+docker stack deploy -c docker-compose.yml cj_stack
+docker stack services service_name

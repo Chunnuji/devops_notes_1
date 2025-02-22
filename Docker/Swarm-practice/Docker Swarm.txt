@@ -1,0 +1,22 @@
+docker swarm init
+--on server
+docker swarm init --advertise-addr ip_address
+docker swarm --help
+docker service --help
+docker service ls
+docker service ps service name
+docker service rm service_id
+docker service update met5anx3jveg --replicas 3
+docker service rollback service_id
+
+--docker swarm cluster setup
+--node manager,leader
+docker swarm init --advertise-add ip_address
+docker node ls
+docker swarm join-token manager
+docker swarm join-token worker
+docker node demote node_id
+docker node promote node_id
+docker service create --replicas 50 nginx:alpine
+docker inspect visualizer
+docker stack deploy -c docker_visualizer.yml visualizer
