@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  webapp:
+    image: mysql:latest
+    envoronment:
+      MYSQL_ROOT_PASSWORD=pwd
+      MYSQL_DATABASE=db
+    ports:
+      - "80:80"
+    deploy:
+      replicas: 3
+      placement:
+        constraints:
+          - node.role == worker
+          - node.labels.environment == production
+          - node.labels.zone == east

@@ -1,0 +1,5 @@
+docker service run --name some_name --constraints node.role==manager image_name
+docker container run -d -p 8091:90 -v /var/run/docker.sock:/var/run/docker.sock dockersamples/visualizer
+docker node update --label-add=region=east 7x0d0ivw0ejjlxl07adyngmhn
+docker service run --name some_name --constraints node.labels.region==east image_name
+docker service update --name some_name --constraints-rm node.labels.region==east --constraints-add nnode.role==manager image_name

@@ -1,0 +1,4 @@
+docker run --name my-postgres -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=mypassword -e POSTGRES_DB=mydatabase -p 5432:5432 -d postgres
+docker run --name my-postgres2o --health-cmd="pg_isready -U postgres" -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=mypassword -e POSTGRES_DB=mydatabase -d postgres
+docker service create --name my-postgres2o --health-cmd="pg_isready -U postgres" -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=mypassword -e POSTGRES_DB=mydatabase -d postgres
+docker service rm

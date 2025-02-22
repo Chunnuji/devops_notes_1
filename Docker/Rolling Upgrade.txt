@@ -1,0 +1,9 @@
+docker service create --name nginx_cj -p 8080:80 nginx:1.14.2
+docker serive ls
+docker service ps service_name
+--horizontal scaling
+docker service scale nginx_cj=6
+--upgrade image version --will create new container and shutdown running ones
+docker service update --image nginx:latest nginx_cj
+--update port
+docker service update --publish-rm 8080:80 --publish-add 8081:80 nginx_cj
