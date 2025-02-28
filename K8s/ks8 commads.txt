@@ -1,0 +1,11 @@
+kubectl config view
+minikube start --driver=docker --container-runtime=containerd
+minikube status
+kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
+kubectl get deployment
+kubectl get pods
+kubectl expose deployment hello-node --type LoadBalancer --port 8081
+kubectl get services
+minikube service service_name
+kubectl delete service hello-node
+kubectl delete deployment hello-node

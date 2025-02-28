@@ -1,0 +1,3 @@
+ctrl+F --> windows to linux vice versa
+sudo <any command -- to run as root>
+sudo su -(to be root)
